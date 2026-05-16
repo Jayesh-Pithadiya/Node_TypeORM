@@ -4,7 +4,7 @@ import { User } from "../entity/User";
 
 export const AppDataSource = new DataSource({
     type: "mongodb",
-    url: "mongodb+srv://jayeshpithadiya385_db_user:EsnyiIz5VxIOPv21@cluster0.dkferfg.mongodb.net/Type_Orm",
+    url: process.env.MONGO_URL,
     database: "typeorm_demo",
     entities: [User],
     synchronize: true,
