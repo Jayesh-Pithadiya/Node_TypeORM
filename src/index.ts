@@ -1,4 +1,5 @@
 
+import "dotenv/config";
 import express from "express";
 import { AppDataSource } from "./config/data-source";
 import userRoutes from "./routes/user.routes";
@@ -16,4 +17,7 @@ AppDataSource.initialize()
             console.log("Server running on port 5000");
         });
     })
-    .catch(console.error);
+    .catch((error) => {
+        console.error("Error during Data Source initialization:", error);
+        process.exit(1);
+    });
