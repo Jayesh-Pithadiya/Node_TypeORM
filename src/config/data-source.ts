@@ -3,10 +3,13 @@ import { DataSource } from "typeorm";
 import { User } from "../entity/User";
 
 export const AppDataSource = new DataSource({
-    type: "mongodb",
-    url: process.env.MONGO_URL,
+    type: "postgres",
+    host: "localhost",
+    port: 5432,
+    username: "postgres",
+    password: "Jayesh@5193",
     database: "typeorm_demo",
     entities: [User],
     synchronize: true,
-    logging: true
+    logging: false,
 });
